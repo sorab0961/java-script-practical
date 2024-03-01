@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>small large</title>
+    <script src="index.js"></script>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .chittar {
+            height: 260px;
+            width: 80%;
+            background: linear-gradient(rgb(0, 255, 174), rgb(0, 251, 255), rgb(0, 94, 255));
+            display: flex;
+            background: no-repeat;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 4px dotted rgb(255, 221, 0);
+            border-radius: 8%;
+        }
+
+        button {
+            height: 24px;
+            width: 67px;
+            border: 2px solid black;
+            border-radius: 12px;
+            margin: 4px;
+        }
+    </style>
+</head>
+
+<body style="display: flex; justify-content: center;align-items: center; flex-direction: column;">
+    <div class="chittar">
+        <h1>THIS IS YOUR OUTPUT</h1>
+        <input id="num" type="text">
+        <button onclick="checking()">chilick</button>
+        <button onclick="printer()">printer</button>
+        <br>
+        <h1 id="MAX"></h1>
+        <br>
+        <h1 id="MIN"></h1>
+    </div>
+</body>
+
+</html>

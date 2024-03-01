@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .clock {
+            height: 200px;
+            width: 200px;
+            border: 6px solid black;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .hour,
+        .minute,
+        .second {
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background-color: #333;
+            top: 50%;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+        }
+
+        .hour {
+            height: 6px;
+            background-color: #000000;
+        }
+
+        .minute {
+            height: 3px;
+            background-color: #090b7c;
+        }
+
+        .second {
+            height: 1px;
+            background-color: rgb(0, 242, 255);
+        }
+
+        .center-dot {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            background-color: #666;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hour" id="hour"></div>
+        <div class="minute" id="minute"></div>
+        <div class="second" id="second"></div>
+        <div class="center-dot"></div>
+
+    </div>
+</body>
+
+</html>

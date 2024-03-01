@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .clock {
+      width: 200px;
+      height: 200px;
+      border: 10px solid #333;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .hour, .minute, .second {
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background-color: #333;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+    }
+
+    .hour {
+      height: 6px;
+      background-color: #333;
+    }
+
+    .minute {
+      height: 3px;
+      background-color: #666;
+    }
+
+    .second {
+      height: 1px;
+      background-color: #f00;
+    }
+
+    .center-dot {
+      width: 12px;
+      height: 12px;
+      background-color: #333;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="hour" id="hour"></div>
+    <div class="minute" id="minute"></div>
+    <div class="second" id="second"></div>
+    <div class="center-dot"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours() % 12;
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+
+      const hourElement = document.getElementById('hour');
+      const minuteElement = document.getElementById('minute');
+      const secondElement = document.getElementById('second');
+
+      const hourRotation = (hours + minutes / 60) * 360 / 12;
+      const minuteRotation = (minutes + seconds / 60) * 360 / 60;
+      const secondRotation = (seconds / 60) * 360;
+
+      hourElement.style.transform = `rotate(${hourRotation}deg)`;
+      minuteElement.style.transform = `rotate(${minuteRotation}deg)`;
+      secondElement.style.transform = `rotate(${secondRotation}deg)`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock(); 
+  </script>
+</body>
+</html>
